@@ -1,37 +1,57 @@
 ---
 import '../styles/global.css';
 import { withBase } from '../lib/url';
+import { LOCALES, localePath, t, type Locale } from '../i18n/config';
 
 interface Props {
+  lang: Locale;
   title: string;
   description: string;
+  /** Route without a locale prefix, e.g. "/" or "/resume". Used for hreflang alternates. */
+  route: string;
 }
 
-const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const { lang, title, description, route } = Astro.props;
+const tr = t(lang);
+const canonical = new URL(withBase(localePath(lang, route)), Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {
+      LOCALES.map((locale) => (
+        <link
+          rel="alternate"
+          hreflang={locale}
+          href={new URL(withBase(localePath(locale, route)), Astro.site).href}
+        />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(withBase(localePath('en', route)), Astro.site).href}
+    />
     <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <meta name="color-scheme" content="dark" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
   </head>
   <body>
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:border focus:border-border-default focus:bg-canvas-subtle focus:px-4 focus:py-2 focus:text-fg"
     >
-      Skip to content
+      {tr('nav.skip')}
     </a>
     <slot />
   </body>

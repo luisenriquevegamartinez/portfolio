@@ -1,9 +1,12 @@
 @import 'tailwindcss';
 
 /*
-  Palette taken from GitHub's dark interface (Primer). Link and muted values are the
-  lighter variants deliberately: the darker ones sit near 4.4:1 against the canvas and
-  fail WCAG AA for body text.
+  Surfaces come from GitHub's dark interface (Primer). The accent is the teal sampled
+  from the LinkedIn banner (its brightest family member, around #10D0B0), so a recruiter
+  arriving from LinkedIn meets the same signature colour.
+
+  The muted foreground and the accent are the lighter variants deliberately: the darker
+  ones sit near 4.4:1 against the canvas and fail WCAG AA for body text.
 */
 @theme {
   --color-canvas: #0d1117;
@@ -12,7 +15,7 @@
   --color-border-muted: #21262d;
   --color-fg: #e6edf3;
   --color-fg-muted: #9ba7b4;
-  --color-accent: #58a6ff;
+  --color-accent: #2dd4bf;
 
   --font-sans:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial,

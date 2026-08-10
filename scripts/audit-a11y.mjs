@@ -16,7 +16,7 @@ const AXE_PATH = require.resolve('axe-core/axe.min.js');
 
 const DIST = resolve('dist');
 const BASE = '/portfolio';
-const PAGES = ['/', '/resume'];
+const PAGES = ['/', '/resume', '/es/', '/es/resume'];
 const VIEWPORTS = [
   { name: 'mobile', width: 320, height: 720 },
   { name: 'tablet', width: 768, height: 1024 },

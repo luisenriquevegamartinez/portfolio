@@ -1,7 +1,7 @@
 [
   {
     "id": "core",
-    "label": "Core",
+    "label": { "en": "Core", "es": "Principal" },
     "order": 1,
     "resume": true,
     "items": [
@@ -18,7 +18,7 @@
   },
   {
     "id": "architecture",
-    "label": "Architecture",
+    "label": { "en": "Architecture", "es": "Arquitectura" },
     "order": 2,
     "resume": true,
     "items": [
@@ -32,7 +32,7 @@
   },
   {
     "id": "testing-ci",
-    "label": "Testing & CI/CD",
+    "label": { "en": "Testing & CI/CD", "es": "Testing y CI/CD" },
     "order": 3,
     "resume": true,
     "items": [
@@ -47,7 +47,7 @@
   },
   {
     "id": "platform",
-    "label": "Also worked with",
+    "label": { "en": "Also worked with", "es": "También trabajé con" },
     "order": 4,
     "resume": true,
     "items": [
@@ -56,14 +56,14 @@
       "Express",
       "C# (.NET)",
       "Ionic",
-      "Accessibility (WCAG)",
+      "WCAG",
       "i18n",
       "Linux"
     ]
   },
   {
     "id": "ui-libraries",
-    "label": "UI libraries",
+    "label": { "en": "UI libraries", "es": "Librerías de UI" },
     "order": 5,
     "resume": false,
     "items": [

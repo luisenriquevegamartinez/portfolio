@@ -1,0 +1,29 @@
+---
+import { withBase } from '../lib/url';
+import { localePath, otherLocale, ui, type Locale } from '../i18n/config';
+
+interface Props {
+  lang: Locale;
+  /** Route without a locale prefix, e.g. "/" or "/resume". */
+  route: string;
+}
+
+const { lang, route } = Astro.props;
+const target = otherLocale(lang);
+---
+
+{/*
+  A plain link, not a button with script: the site ships no JavaScript, and swapping
+  languages is a navigation. `hreflang` and `lang` tell assistive technology that the
+  label is written in the other language, so a screen reader does not read "Español"
+  with an English voice.
+*/}
+<a
+  href={withBase(localePath(target, route))}
+  hreflang={target}
+  lang={target}
+  class="rounded-md border border-border-default px-2.5 py-1 font-mono text-xs text-fg-muted transition-colors hover:border-fg-muted hover:text-fg"
+>
+  <span aria-hidden="true">{target.toUpperCase()}</span>
+  <span class="sr-only">{ui[target]['lang.name']}</span>
+</a>

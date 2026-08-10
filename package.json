@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "verify:pdf": "node scripts/verify-resume-pdf.mjs dist/resume.pdf",
+    "verify:pdf": "node scripts/verify-resume-pdf.mjs",
     "measure": "node scripts/measure.mjs dist",
     "a11y": "node scripts/audit-a11y.mjs"
   },

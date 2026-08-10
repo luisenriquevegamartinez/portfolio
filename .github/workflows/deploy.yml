@@ -48,9 +48,13 @@ jobs:
       - name: Generate resume PDF
         run: node scripts/generate-resume-pdf.mjs
 
-      # Fails the deploy if the PDF is not a single page of real, extractable text.
-      - name: Verify resume PDF
-        run: node scripts/verify-resume-pdf.mjs dist/resume.pdf
+      # Fails the deploy if either PDF stops being a single page of real, extractable text.
+      - name: Verify resume PDFs
+        run: node scripts/verify-resume-pdf.mjs
+
+      # Fails the deploy on any WCAG 2.1 A/AA violation or horizontal overflow.
+      - name: Accessibility audit
+        run: node scripts/audit-a11y.mjs
 
       - uses: actions/configure-pages@v5
 

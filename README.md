@@ -6,10 +6,13 @@ Live at <https://luisenriquevegamartinez.github.io/portfolio/>
 
 Astro, Tailwind and TypeScript. No external CDNs — every asset is served from the site itself.
 
-## One source, two renderings
+Bilingual: English at `/portfolio/`, Spanish at `/portfolio/es/`. English stays unprefixed
+so the URL linked from LinkedIn keeps resolving.
 
-The site and the PDF resume are generated from the same content. There is no separate
-resume document, because a separate document goes stale.
+## One source, four renderings
+
+Two languages on the site and two PDF resumes, all generated from the same content. There
+is no separate resume document, because a separate document goes stale.
 
 ```text
 src/content/
@@ -19,6 +22,23 @@ src/content/
 ├── skills.json
 └── projects/              Defined, intentionally empty
 ```
+
+Translatable prose is nested per locale inside each file; everything structural — dates,
+stack, links, and the resume cut — is declared once:
+
+```yaml
+company: Babel              # once
+start: 2023-09-01           # once
+resume: full                # once: the cut applies to both languages
+role:
+  en: Software Engineer, Front-End
+  es: Ingeniero de Software, Front-End
+```
+
+Splitting the languages into separate files would mean remembering to change `resume:` in
+two places, and one day that would not happen. Facts stay single-source; only wording is
+duplicated, because only wording genuinely differs. Both locales are required — a failed
+build is how you discover a missing translation, rather than a half-English page.
 
 Every collection is validated by a Zod schema in [`src/content.config.ts`](src/content.config.ts),
 so a malformed edit fails the build instead of silently producing a broken page.
@@ -50,17 +70,18 @@ alongside the source material.
 | Command | Does |
 | --- | --- |
 | `npm run dev` | Dev server at <http://localhost:4321/portfolio/> |
-| `npm run build` | Builds the site and generates `dist/resume.pdf` |
+| `npm run build` | Builds the site and generates both resume PDFs |
 | `npm run build:site` | Builds the site only |
-| `npm run pdf` | Regenerates the PDF from an existing `dist/` |
-| `npm run verify:pdf` | Asserts the PDF is one page of real, extractable text |
-| `npm run measure` | Prints resume content height against the page box, per section |
+| `npm run pdf` | Regenerates the PDFs from an existing `dist/` |
+| `npm run verify:pdf` | Asserts each PDF is one page of real, extractable text |
+| `npm run measure` | Prints resume content height against the page box, per locale and section |
+| `npm run a11y` | Runs axe-core over every page at three viewports |
 
 ## The resume PDF
 
-`scripts/generate-resume-pdf.mjs` runs Chromium over the built `/resume` page and calls
-`page.pdf()`. That produces a real text layer — selectable, copyable, and readable by
-applicant tracking systems.
+`scripts/generate-resume-pdf.mjs` runs Chromium over each built `/resume` page and calls
+`page.pdf()`, producing `resume.pdf` and `resume-es.pdf`. That gives a real text layer —
+selectable, copyable, and readable by applicant tracking systems.
 
 This matters more than it sounds. A PDF produced with `html2canvas` or any DOM-to-image
 approach renders identically and is a picture: an ATS extracts nothing from it. Everything
