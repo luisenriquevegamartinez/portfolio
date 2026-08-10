@@ -25,7 +25,17 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      # `npm install`, not `npm ci`, on purpose.
+      #
+      # sharp ships platform-specific optional dependencies, and a lockfile generated on
+      # Windows does not record the hoisted @emnapi/runtime entry that @img/sharp-wasm32
+      # requires on Linux. `npm ci` reads that as an out-of-sync lockfile and refuses to
+      # install. `npm install` resolves against the platform it is actually running on.
+      #
+      # The tradeoff is real: this gives up the strict reproducibility of `npm ci`. The
+      # committed lockfile still pins versions, but the runner may resolve optional
+      # dependencies on its own.
+      - run: npm install --no-audit --no-fund
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
