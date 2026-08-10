@@ -1,0 +1,79 @@
+[
+  {
+    "id": "core",
+    "label": "Core",
+    "order": 1,
+    "resume": true,
+    "items": [
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "RxJS",
+      "NgRx",
+      "React",
+      "Next.js",
+      "HTML5",
+      "CSS3 / SCSS"
+    ]
+  },
+  {
+    "id": "architecture",
+    "label": "Architecture",
+    "order": 2,
+    "resume": true,
+    "items": [
+      "Microfrontends",
+      "Module Federation",
+      "Nx",
+      "Atomic Design",
+      "Web Components",
+      "SOLID / Clean Architecture"
+    ]
+  },
+  {
+    "id": "testing-ci",
+    "label": "Testing & CI/CD",
+    "order": 3,
+    "resume": true,
+    "items": [
+      "Vitest",
+      "Jest",
+      "Karma / Jasmine",
+      "GitHub Actions",
+      "Azure Pipelines",
+      "Kubernetes (GKE)",
+      "Docker"
+    ]
+  },
+  {
+    "id": "platform",
+    "label": "Also worked with",
+    "order": 4,
+    "resume": true,
+    "items": [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "C# (.NET)",
+      "Ionic",
+      "Accessibility (WCAG)",
+      "i18n",
+      "Linux"
+    ]
+  },
+  {
+    "id": "ui-libraries",
+    "label": "UI libraries",
+    "order": 5,
+    "resume": false,
+    "items": [
+      "Angular Material",
+      "ag-Grid",
+      "Radix-NG",
+      "PrimeNG",
+      "ApexCharts",
+      "Looker",
+      "Mixpanel"
+    ]
+  }
+]
