@@ -166,6 +166,10 @@ const sectionHeading = 'text-xs font-semibold uppercase tracking-widest text-fg-
               </div>
             ))
           }
+          <div class="sm:grid sm:grid-cols-[11rem_1fr] sm:gap-6">
+            <dt class="text-sm font-medium text-fg-muted">{tr('section.languages')}</dt>
+            <dd class="mt-1 text-pretty sm:mt-0">{profile.languages[lang].join(', ')}</dd>
+          </div>
         </dl>
       </section>
 

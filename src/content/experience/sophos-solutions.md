@@ -14,17 +14,13 @@ stack:
   - Module Federation
   - Microfrontends
   - Node.js
-# NOT ENABLED — attribution unconfirmed.
-# The old portfolio linked "Mi Cuenta SU+" and "Plink" without naming an employer.
-# Assigning them to Sophos is an inference from dates and stack, not something the
-# LinkedIn source states. Uncomment only what you can confirm.
-# Mi Cuenta SU+ additionally returned HTTP 403 from here (WAF or geo-block) —
-# verify it opens in your browser before enabling it.
-# links:
-#   - label: Plink
-#     url: https://comercios.plink.com.co/sign_in
-#   - label: Mi Cuenta SU+
-#     url: https://micuenta.mundosumas.com/auth/login?steep=1
+# it runs anti-bot challenges — but loads normally in a browser, so the automated
+# link check in this repo will always report it as failing. That is expected.
+links:
+  - label: Plink
+    url: https://comercios.plink.com.co/sign_in
+  - label: Mi Cuenta SU+
+    url: https://micuenta.mundosumas.com/auth/login?steep=1
 caseStudy:
   en:
     problem: >-

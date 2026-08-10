@@ -74,6 +74,9 @@ const profile = defineCollection({
     headline: localizedText,
     // One text per language, used by both the site hero and the PDF summary.
     summary: localizedText,
+    // Stated in CEFR. An inflated level is the kind of claim that collapses on the
+    // first call, and the honest one is cheap to hold.
+    languages: localizedList,
     links: z.array(z.object({ label: z.string(), url: z.url() })),
   }),
 });

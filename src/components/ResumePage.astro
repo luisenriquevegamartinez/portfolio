@@ -100,6 +100,11 @@ const contact = [
             </p>
           ))
         }
+        {/* Languages live under Skills rather than in their own section: it is one line
+            of content, and a whole heading for it would cost more page than it earns. */}
+        <p class="skill-line">
+          <strong>{tr('section.languages')}:</strong> {profile.languages[lang].join(', ')}
+        </p>
       </section>
 
       <section>
@@ -180,7 +185,7 @@ const contact = [
   }
 
   h2 {
-    margin: 4mm 0 1.6mm;
+    margin: 3.4mm 0 1.4mm;
     padding-bottom: 0.8mm;
     border-bottom: 0.7pt solid var(--rule);
     font-size: 10.5pt;
@@ -193,7 +198,7 @@ const contact = [
   }
 
   .role {
-    margin-bottom: 2mm;
+    margin-bottom: 1.7mm;
     break-inside: avoid;
     page-break-inside: avoid;
   }
@@ -212,7 +217,7 @@ const contact = [
   .compact + .compact,
   .skill-line + .skill-line,
   .edu-line + .edu-line {
-    margin-top: 1.4mm;
+    margin-top: 1.2mm;
   }
 
   /*
