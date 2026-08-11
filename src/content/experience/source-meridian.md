@@ -4,8 +4,8 @@ role:
   en: Frontend Developer
   es: Desarrollador Frontend
 location:
-  en: Cartagena, Colombia
-  es: Cartagena, Colombia
+  en: Medellín, Colombia (remote)
+  es: Medellín, Colombia (remoto)
 start: 2025-05-01
 end: 2026-08-01
 resume: full

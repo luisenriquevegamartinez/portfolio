@@ -1,13 +1,13 @@
 ---
 company: Babel
 role:
-  en: Software Engineer, Front-End
-  es: Ingeniero de Software, Front-End
+  en: Frontend Software Engineer
+  es: Ingeniero de Software Frontend
 location:
   en: Colombia (remote)
   es: Colombia (remoto)
-start: 2023-09-01
-end: 2025-05-01
+start: 2023-09-25
+end: 2025-05-23
 resume: full
 stack:
   - Angular
