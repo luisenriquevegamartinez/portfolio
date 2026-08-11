@@ -57,6 +57,16 @@ maintained as a second file. Each role declares how it renders in the PDF:
 The website always renders every role in full. Only the PDF respects the field, so
 shortening the resume is a one-word edit.
 
+### Why there is no projects section
+
+The `projects` collection exists and validates, but the directory is empty on purpose.
+Almost everything worth showing was built for employers or their clients and cannot be
+linked, and the few public production URLs belong to the oldest roles — so a grid of them
+would put 2020 work at eye level while the strongest work had no card at all. Those URLs
+are attached to the roles they came from instead, where they read as evidence rather than
+as headlines. Adding a self-published project later means dropping one markdown file into
+`src/content/projects/`.
+
 ## Editing content
 
 Change a markdown file under `src/content/`. Nothing else. The build validates the result
