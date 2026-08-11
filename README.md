@@ -62,8 +62,21 @@ shortening the resume is a one-word edit.
 Change a markdown file under `src/content/`. Nothing else. The build validates the result
 and both renderings update together.
 
-Writing guidance and the rules the content follows live in `portfolio-EXPERIENCE-TEMPLATE.md`
-alongside the source material.
+`src/content/experience/babel.md` is the file to copy when adding a role: it uses every
+field. The schema in [`src/content.config.ts`](src/content.config.ts) is the specification,
+and it fails the build rather than letting a malformed entry through.
+
+Rules the content follows, none of which a schema can enforce:
+
+- **Nothing is invented.** Every achievement, number, client and technology traces back to
+  the LinkedIn profile this was written from.
+- **Numbers appear exactly as stated**, hedges included: `~45 min → ~2 min`, `~95%`,
+  `20-30%`, `2 hours → 1 minute`, `80%`, `100%`.
+- **A metric belongs to one role.** The 2 hours to 1 minute automation figure is true of
+  both Sophos Solutions and CINTE Colombia; it appears on Sophos only, because the same
+- **Bullets stay near one printed line.** A resume bullet that wraps is a bullet that does
+  not get scanned. Long-form detail belongs in `caseStudy`, which only the website renders.
+- **No claim outruns the evidence.** Job titles, dates and language levels are stated as
 
 ## Commands
 
