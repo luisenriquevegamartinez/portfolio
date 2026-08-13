@@ -4,8 +4,8 @@ role:
   en: Frontend Developer
   es: Desarrollador Frontend
 location:
-  en: Colombia
-  es: Colombia
+  en: Colombia (remote)
+  es: Colombia (remoto)
 start: 2023-07-01
 end: 2023-10-01
 resume: compact

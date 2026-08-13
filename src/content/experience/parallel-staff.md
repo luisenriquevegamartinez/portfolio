@@ -4,8 +4,8 @@ role:
   en: Frontend Developer
   es: Desarrollador Frontend
 location:
-  en: United States
-  es: Estados Unidos
+  en: United States (remote)
+  es: Estados Unidos (remoto)
 start: 2023-02-01
 end: 2023-05-01
 resume: compact

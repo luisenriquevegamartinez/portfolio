@@ -4,8 +4,8 @@ role:
   en: Software Developer
   es: Desarrollador de Software
 location:
-  en: Colombia
-  es: Colombia
+  en: Colombia (remote)
+  es: Colombia (remoto)
 start: 2020-06-01
 end: 2020-12-01
 resume: compact

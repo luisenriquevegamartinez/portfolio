@@ -6,6 +6,8 @@ role:
 location:
   en: Colombia (remote)
   es: Colombia (remoto)
+# month and year are displayed. LinkedIn is the source of truth for this profile everywhere
+# not in this file.
 start: 2023-09-25
 end: 2025-05-23
 resume: full

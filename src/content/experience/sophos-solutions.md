@@ -4,16 +4,25 @@ role:
   en: Solutions Consultant I
   es: Solutions Consultant I
 location:
-  en: Colombia
-  es: Colombia
+  en: Colombia (remote)
+  es: Colombia (remoto)
 start: 2021-10-01
 end: 2023-02-01
 resume: full
+# One role, two clients — Mi Cuenta SU+ (Oct 2021 – Mar 2022) then Plink (Mar 2022 – Feb 2023).
+# Written as a single set of bullets with the client named inside each one, which is the same
+# shape babel.md uses for Línea Directa, ING, DKV and Banco Popular.
 stack:
   - Angular
   - Module Federation
   - Microfrontends
+  - TypeScript
   - Node.js
+  - Express
+  - Sequelize
+  - PostgreSQL
+  - AWS
+  - Jest
 # it runs anti-bot challenges — but loads normally in a browser, so the automated
 # link check in this repo will always report it as failing. That is expected.
 links:
@@ -24,34 +33,50 @@ links:
 caseStudy:
   en:
     problem: >-
-      The project needed to absorb every one of its modules into a single architecture, and adding
-      a new microfrontend was a manual, repetitive job that cost roughly two hours each time.
+      Two clients under one role, with opposite problems. Mi Cuenta SU+ needed every one of its
+      modules absorbed into a single architecture, and adding a new microfrontend was a manual,
+      repetitive job that cost roughly two hours each time. On Plink, Bancolombia's merchant
+      platform, ten backend endpoints ran on untyped JavaScript.
     decision: >-
-      I implemented a microfrontend-based architecture to take on the full module set, then wrote a
-      Node.js script that automated the build of each microfrontend as part of the deployment
-      process rather than leaving it as a checklist step.
+      For Mi Cuenta SU+ I implemented a microfrontend-based architecture to take on the full
+      module set, wrote a Node.js script that automated each microfrontend's build inside the
+      deployment process, and built a generator that scaffolded a whole microfrontend from its
+      name alone. For Plink I migrated the ten endpoints to TypeScript on a clean-architecture
+      microservices setup — Node.js, Express and Sequelize over PostgreSQL on AWS — refactoring
+      them against SOLID and writing their unit tests alongside the migration rather than after it.
     result: >-
-      The architecture absorbed 100% of the project's modules, and the time to add a microfrontend
-      dropped from 2 hours to 1 minute.
+      The architecture absorbed 100% of Mi Cuenta SU+'s modules and the time to add a
+      microfrontend dropped from 2 hours to 1 minute. All ten Plink endpoints shipped typed and
+      refactored, with 100% of them covered by unit tests at 100% code coverage.
   es:
     problem: >-
-      El proyecto necesitaba asimilar la totalidad de sus módulos en una sola arquitectura, y
-      agregar un microfrontend nuevo era una tarea manual y repetitiva que costaba alrededor de
-      dos horas cada vez.
+      Dos clientes bajo un mismo rol, con problemas opuestos. Mi Cuenta SU+ necesitaba asimilar
+      la totalidad de sus módulos en una sola arquitectura, y agregar un microfrontend nuevo era
+      una tarea manual y repetitiva que costaba alrededor de dos horas cada vez. En Plink, la
+      plataforma de comercios de Bancolombia, diez endpoints de backend corrían sobre JavaScript
+      sin tipar.
     decision: >-
-      Implementé una arquitectura basada en microfrontends para absorber el conjunto completo de
-      módulos y escribí un script de Node.js que automatizaba la compilación de cada microfrontend
-      dentro del proceso de despliegue, en lugar de dejarlo como un paso de checklist.
+      Para Mi Cuenta SU+ implementé una arquitectura basada en microfrontends que absorbiera el
+      conjunto completo de módulos, escribí un script de Node.js que automatizaba la compilación
+      de cada microfrontend dentro del despliegue, y construí un generador que creaba un
+      microfrontend entero a partir de su nombre. Para Plink migré los diez endpoints a
+      TypeScript sobre una arquitectura limpia basada en microservicios —Node.js, Express y
+      Sequelize sobre PostgreSQL en AWS—, refactorizándolos con principios SOLID y escribiendo
+      sus pruebas unitarias junto a la migración en lugar de después.
     result: >-
-      La arquitectura asimiló el 100% de los módulos del proyecto, y el tiempo para agregar un
-      microfrontend bajó de 2 horas a 1 minuto.
+      La arquitectura asimiló el 100% de los módulos de Mi Cuenta SU+ y el tiempo para agregar un
+      microfrontend bajó de 2 horas a 1 minuto. Los diez endpoints de Plink quedaron tipados y
+      refactorizados, con el 100% de ellos cubierto por pruebas unitarias al 100% de cobertura.
+# Three bullets, not four: the page budget allows no more, so the Plink migration and its
+# SOLID/coverage work share one line here. The full version is in the case study above, which
+# only the website renders.
 highlights:
   en:
-    - Implemented a microfrontend architecture that absorbed 100% of the project's modules.
-    - Built a Node.js script automating each microfrontend's build during deployment.
-    - Cut the time to add a new microfrontend from 2 hours to 1 minute through that automation.
+    - Migrated 10 Plink (Bancolombia) endpoints to TypeScript on clean-architecture microservices, refactored against SOLID.
+    - Covered 100% of those endpoints with Jest unit tests, at 100% code coverage.
+    - Cut the time to add a new microfrontend from 2 hours to 1 minute with a Node.js generator.
   es:
-    - Implementé una arquitectura de microfrontends que asimiló el 100% de los módulos del proyecto.
-    - Desarrollé un script de Node.js que automatiza la compilación de cada microfrontend en el despliegue.
-    - Reduje de 2 horas a 1 minuto el tiempo para agregar un microfrontend nuevo mediante esa automatización.
+    - Migré 10 endpoints de Plink (Bancolombia) a TypeScript sobre microservicios con arquitectura limpia y SOLID.
+    - Cubrí el 100% de esos endpoints con pruebas unitarias en Jest, al 100% de cobertura.
+    - Reduje de 2 horas a 1 minuto el tiempo para agregar un microfrontend con un generador en Node.js.
 ---

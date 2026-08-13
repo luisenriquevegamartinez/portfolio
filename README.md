@@ -28,11 +28,11 @@ stack, links, and the resume cut — is declared once:
 
 ```yaml
 company: Babel              # once
-start: 2023-09-01           # once
+start: 2023-09-25           # once
 resume: full                # once: the cut applies to both languages
 role:
-  en: Software Engineer, Front-End
-  es: Ingeniero de Software, Front-End
+  en: Frontend Software Engineer
+  es: Ingeniero de Software Frontend
 ```
 
 Splitting the languages into separate files would mean remembering to change `resume:` in
