@@ -11,6 +11,18 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
 
+/*
+  Page budget. One page is the target, not an absolute.
+
+  formato y estilo": "Una página". But the same package's CV template also says "trata de no
+  under Experiencia — a formatting preference eating a content requirement.
+
+  So: aim for one page, allow two, fail at three. The hard rule the budget must never break is
+  in README.md — a quantified achievement is never cut to make room while unquantified prose
+  survives on the page.
+*/
+const MAX_PAGES = 2;
+
 /** Section headings render uppercase via CSS; the check below is case-insensitive. */
 const EN = ['Angular', 'TypeScript', 'Module Federation', 'Experience', 'Skills', 'Education'];
 const ES = ['Angular', 'TypeScript', 'Module Federation', 'Experiencia', 'Aptitudes', 'Educación'];
@@ -62,7 +74,10 @@ for (const relative of targets) {
 
   console.log(`\n=== ${name} ===`);
   console.log(`size            : ${(buf.length / 1024).toFixed(0)} KB`);
-  console.log(`pages           : ${doc.numPages}`);
+  console.log(
+    `pages           : ${doc.numPages}` +
+      (doc.numPages === 1 ? '' : ` (budget ${MAX_PAGES} — page 2 must earn its place)`),
+  );
   console.log(`embedded fonts  : ${fonts.join(', ') || 'none'}`);
   console.log(`raster images   : ${rasterImages}`);
   console.log(`extracted chars : ${extracted.length}`);
@@ -71,7 +86,7 @@ for (const relative of targets) {
   console.log(`\n${extracted.slice(0, 320)}…`);
 
   const failures = [];
-  if (doc.numPages !== 1) failures.push(`expected 1 page, got ${doc.numPages}`);
+  if (doc.numPages > MAX_PAGES) failures.push(`expected at most ${MAX_PAGES} pages, got ${doc.numPages}`);
   if (extracted.length < 1500) failures.push(`only ${extracted.length} extractable characters`);
   if (rasterImages > 0) failures.push(`${rasterImages} raster image(s) embedded`);
   if (missing.length) failures.push(`keywords missing: ${missing.join(', ')}`);
@@ -81,7 +96,10 @@ for (const relative of targets) {
     console.error(`\nFAILED (${name}):\n- ${failures.join('\n- ')}`);
     anyFailed = true;
   } else {
-    console.log(`\nOK — single page, real extractable text, no raster content.`);
+    console.log(
+      `\nOK — ${doc.numPages} page(s) within the ${MAX_PAGES}-page budget, ` +
+        `real extractable text, no raster content.`,
+    );
   }
 }
 
