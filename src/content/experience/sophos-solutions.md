@@ -23,8 +23,9 @@ stack:
   - PostgreSQL
   - AWS
   - Jest
-# it runs anti-bot challenges — but loads normally in a browser, so the automated
-# link check in this repo will always report it as failing. That is expected.
+# Mi Cuenta SU+ answers 403 to automated requests — it runs anti-bot challenges — but
+# loads normally in a browser, so this repo's automated link check always reports it as
+# failing. That is expected.
 links:
   - label: Plink
     url: https://comercios.plink.com.co/sign_in
@@ -67,9 +68,8 @@ caseStudy:
       La arquitectura asimiló el 100% de los módulos de Mi Cuenta SU+ y el tiempo para agregar un
       microfrontend bajó de 2 horas a 1 minuto. Los diez endpoints de Plink quedaron tipados y
       refactorizados, con el 100% de ellos cubierto por pruebas unitarias al 100% de cobertura.
-# Three bullets, not four: the page budget allows no more, so the Plink migration and its
-# SOLID/coverage work share one line here. The full version is in the case study above, which
-# only the website renders.
+# The Plink migration and its SOLID/coverage work share one line here; the full version is
+# in the case study above, which only the website renders.
 highlights:
   en:
     - Migrated 10 Plink (Bancolombia) endpoints to TypeScript on clean-architecture microservices, refactored against SOLID.

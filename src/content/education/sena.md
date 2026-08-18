@@ -5,6 +5,6 @@ degree:
   es: Tecnólogo en Administración de Redes de Computadores
 start: 2010-01-01
 end: 2012-12-01
-# Shown on the website, held back from the one-page PDF: it is a 2012 networking
+# Rendered on the website; excluded from the PDF. Set to true to include it.
 resume: false
 ---

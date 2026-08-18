@@ -51,7 +51,7 @@ caseStudy:
     result: >-
       El stage de pruebas pasó de aproximadamente 45 minutos a aproximadamente 2 minutos, una
       reducción cercana al 95%, con la migración a Vitest aportando un 20-30% adicional.
-# Kept to roughly one printed line each: a resume bullet that wraps is a bullet that
+# Kept to roughly one printed line each. The long-form version is the case study above.
 highlights:
   en:
     - Led the Angular 17 to 21 upgrade of a large-scale Nx monorepo built on Module Federation.

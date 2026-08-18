@@ -78,49 +78,35 @@ and it fails the build rather than letting a malformed entry through.
 
 Rules the content follows, none of which a schema can enforce:
 
-- **Nothing is invented.** Every achievement, number, client and technology traces back to
-  the LinkedIn profile this was written from.
+- **Nothing is invented.** Every achievement, number, client and technology is stated as it
+  happened.
 - **Numbers appear exactly as stated**, hedges included: `~45 min → ~2 min`, `~95%`,
   `20-30%`, `2 hours → 1 minute`, `80%`, `100%`.
-- **A metric belongs to one role.** The 2 hours to 1 minute automation figure is true of
-  both Sophos Solutions and CINTE Colombia; it appears on Sophos only, because the same
-- **Bullets stay near one printed line.** A resume bullet that wraps is a bullet that does
-  not get scanned. Long-form detail belongs in `caseStudy`, which only the website renders.
-- **No claim outruns the evidence.** Job titles, dates and language levels are stated as
-- **A quantified achievement is never cut to make room while unquantified prose survives
-  on the page.** This is the one that constrains the page budget below, and it is the rule
-  that gets broken first when a page runs long.
-  — see the page budget below for what that cost.
+- **A metric belongs to one role.** Where the same figure is true of two roles, it appears on
+  one of them and the other leads with something of its own.
+- **Bullets stay near one printed line.** Long-form detail belongs in `caseStudy`, which only
+  the website renders.
+- **No claim outruns the evidence.** Job titles, dates and language levels are stated as they
+  are.
 
-### The page budget: one page is the target, two is the limit
-
-*Apariencia general, formato y estilo*: "Una página". It is worth keeping as a default —
-density forces choices, and choosing is most of what makes a resume good.
-
-that is 45 bullets, which does not fit on one page under any typography. Both instructions
-tagged "Talent 2019/2020/2021".
-
-Applied to eight years and nine employers, the page limit starts deleting exactly what the
-same checklist demands under *Sección de Experiencia Profesional*: "contiene resultados
-cuantificables". An appearance rule eating a content requirement is the rule failing, not
-the content.
-
-So the budget is:
+### The page budget
 
 | | |
 | --- | --- |
-| **Target** | One page. Still the default, still what the `resume:` cut exists to achieve. |
-| **Allowed** | Two, when the career exceeds ~5 roles *and* the second page carries quantified achievements rather than filler. |
+| **Target** | One page — what the `resume:` cut exists to achieve. |
+| **Allowed** | Two, when the second page carries quantified achievements rather than filler. |
 | **Fails** | Three. `scripts/verify-resume-pdf.mjs` enforces this in CI. |
 
-The general resume in this repo fits on one page and should stay there. The budget exists
-general resume does not carry.
+One page is the default because density forces choices, and choosing is most of what makes a
+resume good. It is not an absolute: nine roles at five bullets each is 45 bullets, which does
+not fit on one page under any typography, and a formatting limit that starts deleting
+quantified results is the limit failing rather than the content. Hence the two-page allowance,
+gated on the second page earning its space.
 
-they are decisions rather than oversights: no phone number, no portfolio URL in the contact
-line, no certifications section, no per-role tech-stack line, no proficiency levels in
-Skills, and no city or graduation month in Education. The phone number is deliberate — the
-PDF is published on GitHub Pages, and a public phone number is a real exposure. That reason
-with different rules; this repo currently generates only the public one.
+The resume in this repo fits on one page and should stay there.
+
+No phone number, by choice: the PDF is published on GitHub Pages, and a public phone number is
+a real exposure.
 
 ## Commands
 

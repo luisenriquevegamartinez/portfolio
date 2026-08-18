@@ -13,10 +13,7 @@ stack:
   - Angular
   - Node.js
   - Unit Testing
-# Note: the automation metric from this role (2 hours to 1 minute for adding a module)
-# duplicates the Sophos Solutions figure. It is kept in the case study for the website
-# but deliberately left out of `oneLine`, so the same number does not appear twice on a
-# single-page resume.
+# `oneLine` leads with test coverage; the scaffolding work is covered in the case study.
 oneLine:
   en: >-
     Developed 100% of the components and services of the Parametrizations module, with 100% unit

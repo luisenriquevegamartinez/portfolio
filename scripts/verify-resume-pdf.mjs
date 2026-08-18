@@ -12,14 +12,12 @@ import { resolve } from 'node:path';
 import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
 
 /*
-  Page budget. One page is the target, not an absolute.
+  Page budget: aim for one page, allow two, fail at three.
 
-  formato y estilo": "Una página". But the same package's CV template also says "trata de no
-  under Experiencia — a formatting preference eating a content requirement.
-
-  So: aim for one page, allow two, fail at three. The hard rule the budget must never break is
-  in README.md — a quantified achievement is never cut to make room while unquantified prose
-  survives on the page.
+  One page is the target, not an absolute. Nine roles at five bullets each is 45 bullets, which
+  does not fit on one page under any typography, and a formatting limit that starts deleting
+  quantified results is the limit failing rather than the content. Hence the allowance for a
+  second page, gated on it carrying quantified achievements rather than filler. See README.md.
 */
 const MAX_PAGES = 2;
 
