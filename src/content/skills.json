@@ -52,7 +52,6 @@
     "resume": true,
     "items": [
       "Node.js",
-      "NestJS",
       "Express",
       "PostgreSQL",
       "AWS",
