@@ -22,10 +22,10 @@ export const ui = {
     'action.view': 'View resume',
     'resume.back': '← Back to site',
     'resume.summary': 'Summary',
-    'footer.open': 'Open to remote frontend roles. Reach me at',
+    'footer.open': 'Open to remote full-stack or frontend roles. Reach me at',
     'date.present': 'Present',
     'meta.description': (years: number) =>
-      `Frontend developer with ${years} years of experience in Angular, TypeScript and microfrontend architectures.`,
+      `Full stack developer with ${years} years of experience in Node.js, TypeScript, PostgreSQL, Angular and React.`,
   },
   es: {
     'lang.name': 'Español',
@@ -42,10 +42,10 @@ export const ui = {
     'action.view': 'Ver CV',
     'resume.back': '← Volver al sitio',
     'resume.summary': 'Perfil',
-    'footer.open': 'Disponible para roles remotos de frontend. Escríbeme a',
+    'footer.open': 'Disponible para roles remotos full stack o frontend. Escríbeme a',
     'date.present': 'Actualidad',
     'meta.description': (years: number) =>
-      `Desarrollador frontend con ${years} años de experiencia en Angular, TypeScript y arquitecturas de microfrontends.`,
+      `Desarrollador full stack con ${years} años de experiencia en Node.js, TypeScript, PostgreSQL, Angular y React.`,
   },
 } as const;
 
