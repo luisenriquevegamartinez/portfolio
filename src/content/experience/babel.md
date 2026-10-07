@@ -19,6 +19,7 @@ stack:
   - Angular Material
   - ngx-translate
   - .NET
+  - Azure Service Bus
 caseStudy:
   en:
     problem: >-
@@ -32,9 +33,12 @@ caseStudy:
       partitioned by domain, with the insured parties' identity documents, the customer's data and
       the selected product each held as their own slice, and a service exposed the operations that
       advanced them through the purchase. This was the project where I applied RxJS most
-      intensively. I also refactored duplicated logic into reusable services, and migrated business
-      logic for a Banco Popular project in Costa Rica from SQL Server stored procedures to .NET/C#
-      on a queue-based architecture.
+      intensively. I also refactored duplicated logic into reusable services. On a Banco Popular
+      project in Costa Rica, which moved business logic out of SQL Server stored procedures into
+      C#/.NET 8 microservices integrated over Azure Service Bus, I built the scheduled background
+      job: every 12 hours it processed the queued actions, verifying and integrating them customer
+      by customer, triggered by events from several microservices, to bulk-update customer
+      classification and categorization.
     result: >-
       ING's purchase application ran its whole client-side state through that layer, each domain
       advanced by its own exposed operations rather than synchronized ad hoc between components.
@@ -54,9 +58,12 @@ caseStudy:
       asegurados, los datos del cliente y el producto adquirido cada uno como su propia porción, y
       un servicio exponía las operaciones que los iban actualizando a lo largo de la contratación.
       Fue el proyecto donde apliqué RxJS de forma más intensiva. También refactoricé la lógica
-      duplicada en servicios reutilizables y migré la lógica de negocio de un proyecto de Banco
-      Popular (Costa Rica) desde procedimientos almacenados en SQL Server hacia .NET/C# con una
-      arquitectura basada en colas.
+      duplicada en servicios reutilizables. En un proyecto de Banco Popular (Costa Rica), que
+      trasladó la lógica de negocio desde procedimientos almacenados en SQL Server hacia
+      microservicios en C#/.NET 8 integrados con Azure Service Bus, desarrollé el proceso
+      programado: cada 12 horas procesaba las acciones acumuladas en cola, verificándolas e
+      integrándolas cliente por cliente, disparado por eventos de distintos microservicios, para
+      actualizar de forma masiva la clasificación y categorización de los clientes.
     result: >-
       La aplicación de contratación de ING pasó a manejar todo su estado de cliente a través de esa
       capa, con cada dominio actualizado por sus propias operaciones expuestas en lugar de
