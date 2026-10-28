@@ -15,9 +15,11 @@ stack:
   - Module Federation
   - RxJS
   - React
-  - Ionic
   - Angular Material
+  - PrimeNG
   - ngx-translate
+  - Docker
+  - NGINX
   - .NET
   - Azure Service Bus
 caseStudy:
@@ -42,8 +44,8 @@ caseStudy:
     result: >-
       ING's purchase application ran its whole client-side state through that layer, each domain
       advanced by its own exposed operations rather than synchronized ad hoc between components.
-      The DKV platform was maintained and improved alongside it, a React microfrontend platform
-      with independently versioned libraries was delivered for Línea Directa, and accessibility
+      Alongside it I took part in maintaining DKV's platform and in developing Línea Directa's
+      React microfrontend platform, with independently versioned libraries, and accessibility
       was validated against WCAG using WAVE.
   es:
     problem: >-
@@ -67,21 +69,25 @@ caseStudy:
     result: >-
       La aplicación de contratación de ING pasó a manejar todo su estado de cliente a través de esa
       capa, con cada dominio actualizado por sus propias operaciones expuestas en lugar de
-      sincronizarse de forma ad hoc entre componentes. En paralelo se mantuvo y mejoró la
-      plataforma de DKV, se entregó una plataforma de microfrontends en React con librerías
-      versionadas de forma independiente para Línea Directa, y la accesibilidad se validó contra
-      WCAG con WAVE.
+      sincronizarse de forma ad hoc entre componentes. En paralelo participé en el mantenimiento
+      de la plataforma de DKV y en el desarrollo de la plataforma de microfrontends en React de
+      Línea Directa, con librerías versionadas de forma independiente, y la accesibilidad se
+      validó contra WCAG con WAVE.
 highlights:
   en:
     - "Built from scratch the state layer of ING's insurance purchase app: an NgRx-inspired store on RxJS."
-    - Split that state by domain — insured parties, customer data, product — over actions, reducers and effects.
-    - Delivered a React and Module Federation microfrontend platform for Línea Directa, and maintained DKV's.
-    - Integrated microfrontends into hybrid Android apps with Ionic, bridging to native Java code.
-    - Ensured WCAG accessibility, validated with WAVE, and multi-language support with ngx-translate.
+    - Split that state by domain (insured parties, customer data and product) over actions, reducers and effects.
+    - Took part in developing Línea Directa's microfrontend platform (React + Module Federation) and in maintaining DKV's.
+    - At DKV and ING, worked with Docker and NGINX as a reverse proxy, serving front end and API under one domain with security headers to the backend.
+    - Diagnosed and fixed a communication failure between a native Android app (Java) and an Angular microfrontend loaded in a WebView, analyzing the Java and TypeScript code side by side.
+    - For Banco Popular (Costa Rica), developed a scheduled background job in C#/.NET 8 and Azure Service Bus that recalculated customer risk levels in bulk, during a SQL Server stored procedure-to-microservices migration.
+    - Built responsive interfaces with PrimeNG and SCSS, with WCAG accessibility validated with WAVE and multi-language support with ngx-translate.
   es:
     - "Construí desde cero la capa de estado de la app de contratación de ING: un store inspirado en NgRx sobre RxJS."
-    - Particioné ese estado por dominio —asegurados, datos del cliente y producto— sobre actions, reducers y effects.
-    - Entregué una plataforma de microfrontends en React y Module Federation para Línea Directa, y mantuve la de DKV.
-    - Integré microfrontends en aplicaciones Android híbridas con Ionic, comunicando con código nativo Java.
-    - Aseguré el cumplimiento de accesibilidad WCAG, validado con WAVE, y soporte multi-idioma con ngx-translate.
+    - Particioné ese estado por dominio (asegurados, datos del cliente y producto) sobre actions, reducers y effects.
+    - Participé en el desarrollo de la plataforma de microfrontends de Línea Directa (React + Module Federation) y en el mantenimiento de la de DKV.
+    - En DKV e ING trabajé con Docker y NGINX como proxy inverso, exponiendo front y API bajo un mismo dominio con cabeceras de seguridad hacia el backend.
+    - Diagnostiqué y corregí un fallo de comunicación entre una app Android nativa (Java) y un microfrontend Angular cargado en WebView, analizando en paralelo el código Java y TypeScript.
+    - Para Banco Popular (Costa Rica) desarrollé un proceso programado en C#/.NET 8 y Azure Service Bus que recalculaba de forma masiva el nivel de riesgo de los clientes, durante la migración de stored procedures de SQL Server a microservicios.
+    - Construí interfaces responsive con PrimeNG y SCSS, con accesibilidad WCAG validada con WAVE y soporte multi-idioma con ngx-translate.
 ---
