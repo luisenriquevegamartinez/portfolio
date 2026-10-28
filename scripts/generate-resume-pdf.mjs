@@ -16,6 +16,7 @@ import { chromium } from 'playwright';
 
 const DIST = resolve('dist');
 const BASE = '/portfolio';
+const MAX_PAGES = 2;
 
 /*
   Keep in sync with src/i18n/config.ts.
@@ -136,9 +137,10 @@ try {
         `${pageCount} page(s), ink ${ink.color} at ${contrastOnPaper.toFixed(1)}:1`,
     );
 
-    if (pageCount > 1) {
+    // Keep in sync with MAX_PAGES in scripts/verify-resume-pdf.mjs.
+    if (pageCount > MAX_PAGES) {
       console.error(
-        `\nERROR: ${target.out} must be a single page, got ${pageCount}. ` +
+        `\nERROR: ${target.out} must fit in ${MAX_PAGES} pages, got ${pageCount}. ` +
           `Shorten it by flipping an entry to resume: 'compact' or 'omit'.\n`,
       );
       failed = true;
