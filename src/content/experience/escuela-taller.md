@@ -11,17 +11,18 @@ end: 2020-12-01
 resume: compact
 stack:
   - Angular
+  - Ionic
   - TypeScript
 links:
   - label: Castillo San Felipe ticketing
     url: https://compraenlinea.fortificacionescartagena.com.co/ventas/ventas-visitantes
 oneLine:
   en: >-
-    Developed 100% of the frontend modules of the Castillo San Felipe ERP, covering every ticket
-    purchase and sale flow.
+    Developed 100% of the frontend modules of the Castillo San Felipe ERP in Angular and Ionic,
+    covering every ticket purchase and sale flow.
   es: >-
-    Desarrollé el 100% de los módulos frontend del ERP Castillo San Felipe, cubriendo todos los
-    flujos de compra y venta de boletos.
+    Desarrollé el 100% de los módulos frontend del ERP Castillo San Felipe en Angular e Ionic,
+    cubriendo todos los flujos de compra y venta de boletos.
 caseStudy:
   en:
     problem: >-
